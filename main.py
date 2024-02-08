@@ -1,11 +1,12 @@
 import requests
-
+import datetime as dt
 PIXELA_ENDPOINT = 'https://pixe.la/v1/users'
 TOKEN = 'aweioklngaopijsdfkj'
 USERNAME = 'awwab'
+GRAPH_ID = 'graph1'
 PIXEL_ENDPOINT = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs/{GRAPH_ID}"
 GRAPH_ENDPOINTS = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs"
-GRAPH_ID = 'graph1'
+TODAY = dt.datetime.now().strftime('%Y%m%d')
 
 user_params = {
     "token": TOKEN,
@@ -37,10 +38,9 @@ graph_headers = {
 pixel_headers = {
     'X-USER-TOKEN': TOKEN
 }
-
 params = {
-    'date': '20240207',
-    'quantity': '3.0'
+    'date': TODAY,
+    'quantity': '1.0'
 }
 
 response = requests.post(url=PIXEL_ENDPOINT, json=params, headers=pixel_headers)
