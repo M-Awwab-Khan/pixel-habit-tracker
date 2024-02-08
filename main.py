@@ -3,6 +3,9 @@ import requests
 PIXELA_ENDPOINT = 'https://pixe.la/v1/users'
 TOKEN = 'aweioklngaopijsdfkj'
 USERNAME = 'awwab'
+PIXEL_ENDPOINT = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs/{GRAPH_ID}"
+GRAPH_ENDPOINTS = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs"
+GRAPH_ID = 'graph1'
 
 user_params = {
     "token": TOKEN,
@@ -14,8 +17,6 @@ user_params = {
 # response = requests.post(url=PIXELA_ENDPOINT, json=user_params)
 # print(response.text)
 
-GRAPH_ENDPOINTS = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs"
-GRAPH_ID = 'graph1'
 graph_params = {
     'id': GRAPH_ID,
     'name': 'Coding Graph',
@@ -32,7 +33,6 @@ graph_headers = {
 # print(response.text)
 
 # posting a pixel
-PIXEL_ENDPOINT = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs/graph1"
 
 pixel_headers = {
     'X-USER-TOKEN': TOKEN
