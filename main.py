@@ -9,3 +9,5 @@ user_params = {
     'notMinor': 'yes',
 }
 
+# response = requests.post(url=PIXELA_ENDPOINT, json=user_params)
+# print(response.text)
