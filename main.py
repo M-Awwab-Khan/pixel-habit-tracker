@@ -42,11 +42,11 @@ headers = {
 }
 pixel_params = {
     'date': TODAY,
-    'quantity': '1.0'
+    'quantity': input('How much did you code today? ')
 }
 
-# response = requests.post(url=PIXEL_ENDPOINT, json=pixel_params, headers=headers)
-# print(response.text)
+response = requests.post(url=PIXEL_ENDPOINT, json=pixel_params, headers=headers)
+print(response.text)
 
 # updating a pixel
 update_params = {
@@ -56,5 +56,5 @@ update_params = {
 # response = requests.put(url=UPDATE_ENDPOINT, json=update_params, headers=headers)
 # print(response.text)
 
-response = requests.delete(url=DELETE_ENDPOINT, headers=headers)
-print(response.text)
+# response = requests.delete(url=DELETE_ENDPOINT, headers=headers)
+# print(response.text)
