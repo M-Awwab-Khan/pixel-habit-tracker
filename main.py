@@ -15,9 +15,9 @@ user_params = {
 # print(response.text)
 
 GRAPH_ENDPOINTS = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs"
-
+GRAPH_ID = 'graph1'
 graph_params = {
-    'id':'graph1',
+    'id': GRAPH_ID,
     'name': 'Coding Graph',
     'unit': 'hr',
     'type': 'float',
@@ -28,5 +28,20 @@ graph_headers = {
     'X-USER-TOKEN': TOKEN
 }
 
-response = requests.post(url=GRAPH_ENDPOINTS, json=graph_params, headers=graph_headers)
+# response = requests.post(url=GRAPH_ENDPOINTS, json=graph_params, headers=graph_headers)
+# print(response.text)
+
+# posting a pixel
+PIXEL_ENDPOINT = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs/graph1"
+
+pixel_headers = {
+    'X-USER-TOKEN': TOKEN
+}
+
+params = {
+    'date': '20240207',
+    'quantity': '3.0'
+}
+
+response = requests.post(url=PIXEL_ENDPOINT, json=params, headers=pixel_headers)
 print(response.text)
